@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Random Compliment Generator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            text-align: center;
+            min-height: 100vh;
+            padding: 2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            margin: 20px;
+            max-width: 800px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .compliment {
+            font-size: 2.2rem;
+            line-height: 1.4;
+            margin: 2rem 0;
+            font-weight: 600;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            min-height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 1s ease-in;
+        }
+
+        .signature {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-top: 2rem;
+            font-style: italic;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            .compliment {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="compliment" id="compliment"></div>
+        <div class="signature">I hope you enjoy Blitzschlag to the fullest ♥</div>
+    </div>
+
+    <script>
+        const compliments = [
+            "Your outfit is absolutely fire today!",
+            "That smile of yours could light up a continent!",
+            "You have the best energy in the room!",
+            "Your confidence is inspiring!",
+            "Your hair looks amazing today!",
+            "You're someone's reason to smile!",
+            "Your presence makes everything better!",
+            "You have impeccable taste!",
+            "Your kindness radiates from you!",
+            "You're crushing it today!",
+            "Your style is next level!",
+            "That color looks incredible on you!",
+            "You have the best laugh!",
+            "You're a walking work of art!",
+            "Your positivity is contagious!",
+            "You have superstar energy!",
+            "Your vibe could power a city!",
+            "You're glowing today!",
+            "You make this campus brighter!",
+            "Your existence matters!",
+            "You're a fantastic human being!",
+            "Your shoes are so cool!",
+            "You have beautiful eyes!",
+            "Your smile is unforgettable!",
+            "You're doing better than you think!",
+            "Your brain is magnificent!",
+            "You have great posture!",
+            "Your voice is so comforting!",
+            "You're absolutely killing it!",
+            "Your ideas matter!",
+            "You have perfect comedic timing!",
+            "Your passion is inspiring!",
+            "You're a natural leader!",
+            "Your determination is admirable!",
+            "You have the best suggestions!",
+            "Your creativity knows no bounds!",
+            "You're making a difference!",
+            "Your resilience is powerful!",
+            "You have incredible taste in music!",
+            "Your kindness is changing lives!",
+            "You're smarter than you realize!",
+            "Your potential is limitless!",
+            "You have a beautiful soul!",
+            "Your perspective is valuable!",
+            "You're important and loved!",
+            "Your courage is commendable!",
+            "You have the best positive vibes!",
+            "Your growth is inspiring!",
+            "You're exactly where you need to be!",
+            "Your quirks make you special!",
+            "You have a heart of gold!",
+            "Your authenticity is refreshing!",
+            "You're doing an amazing job!",
+            "Your curiosity is inspiring!",
+            "You have the best energy!",
+            "Your style is unmatched!",
+            "You're a ray of sunshine!",
+            "Your determination will take you far!",
+            "You have such a warm presence!",
+            "Your ideas are brilliant!",
+            "You're making progress every day!",
+            "Your hard work is paying off!",
+            "You have incredible potential!",
+            "Your smile is contagious!",
+            "You're stronger than you know!",
+            "Your mind is beautiful!",
+            "You have the best positive attitude!",
+            "Your friendship is a gift!",
+            "You're absolutely enough!",
+            "Your potential takes our breath away!",
+            "You have such a kind heart!",
+            "Your courage inspires others!",
+            "You're doing better than you think!",
+            "Your presence is a present!",
+            "You have amazing things ahead!",
+            "Your light shines so bright!",
+            "You're someone's favorite person!",
+            "Your future self is thanking you!",
+            "You have the power to make magic!"
+        ];
+
+        function showCompliment() {
+            const randomIndex = Math.floor(Math.random() * compliments.length);
+            const complimentElement = document.getElementById('compliment');
+            complimentElement.style.animation = 'none';
+            void complimentElement.offsetWidth; // Trigger reflow
+            complimentElement.style.animation = 'fadeIn 1s ease-in';
+            complimentElement.textContent = compliments[randomIndex];
+        }
+
+        // Initial compliment and rotation
+        showCompliment();
+        setInterval(showCompliment, 5000);
+    </script>
+</body>
+</html>
